@@ -1,18 +1,20 @@
 <template lang="">
-    <header class="my_header">
-        <section class="my_logo-sect">
-            <img class="my_logo" :src="logoIMG.src" :alt="logoIMG.alt" />
-        </section>
-        <section>
-            <ul class="my_links-ul">
-                <li v-for="(element, index) in navLinks">
-                    <a href="#" @click="activeLi">
-                        {{element.text}}
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </header>
+        <header class="my_header">
+            <div class="container d-flex align-items-center justify-content-between">
+                <section class="my_logo-sect">
+                    <img class="my_logo" :src="logoIMG.src" :alt="logoIMG.alt" />
+                </section>
+                <section class="d-flex align-items-center">
+                    <ul class="d-flex align-items-center list-unstyled my_links-ul m-0">
+                        <li v-for="(element, index) in navLinks">
+                            <a href="#" :class="activeIndex === index ? 'my_active-li' : ''" @click="activeLi(index)">
+                                {{element.text}}
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </header>
 </template>
 
 <script>
@@ -71,10 +73,8 @@
         },
 
         methods: {
-            activeLi (e) {
+            activeLi (index) {
                 this.activeIndex = index
-                this.navLinks.active = true
-                e.target.classList.add("my_active-li")
             }
         },
     }
@@ -85,10 +85,7 @@
     @use "../styles/partials/mixins";
 
     .my_header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: .5rem 0;
+        padding: 1rem 0;
     }
 
     .my_logo-sect {
@@ -102,10 +99,7 @@
     }
 
     .my_links-ul {
-        display: flex;
-        align-items: center;
         gap: 20px;
-        list-style: none;
     }
 
     li a {

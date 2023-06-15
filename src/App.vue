@@ -1,9 +1,7 @@
 <template lang="">
-    <div class="my_container">
-        <AppHeader />
-        <AppMain />
-        <AppFooter />
-    </div>
+    <AppHeader />
+    <AppMain />
+    <AppFooter />
 </template>
 
 <script>
