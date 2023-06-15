@@ -1,5 +1,5 @@
 <template lang="">
-    <div>
+    <div class="my_container">
         <AppHeader />
         <AppMain />
         <AppFooter />
@@ -16,12 +16,13 @@
     import AppHeader from "./components/AppHeader.vue"
     import AppMain from "./components/AppMain.vue"
     import AppFooter from "./components/AppFooter.vue"
-    components: {
-        AppHeader,
-        AppMain,
-        AppFooter
-    }
     export default {
+        components: {
+            AppHeader,
+            AppMain,
+            AppFooter
+        },
+
         data() {
             return {
                 
