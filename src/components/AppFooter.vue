@@ -1,6 +1,6 @@
 <template lang="">
     <section class="my_footer-links">
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between my_container">
             <div class="my_links d-flex">
                 <div class="my_link1">
                     <h2>
@@ -152,6 +152,10 @@
 <style lang="scss" scoped>
     @use  "../styles/partials/variables";
     @use "../styles/partials/mixins";
+
+    .my_container{
+        padding: 2rem 0;
+    }
 
     .my_footer-links {
         background-image: url("../assets/img/footer-bg.jpg");
