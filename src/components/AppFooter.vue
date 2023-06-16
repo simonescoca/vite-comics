@@ -55,17 +55,17 @@
         </div>
     </section>
     <section class="my_sign-up-and-social">
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between align-items-center my_sign-up-and-social-container">
             <div class="my_sign-up">
                 <button type="button" class="btn btn-outline-primary">
-                    Sign Up
+                    Sign-Up NOW!
                 </button>
             </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <p class="p-0 my_follow-us">
+            <div class="d-flex justify-content-center align-items-center my_follow-us-container">
+                <p class="m-0 my_follow-us">
                     FOLLOW US
                 </p>
-                <div class="my_socials-images">
+                <div class="d-flex align-items-center my_socials-images">
                     <img v-for="(image, index) in socialImages" :src="image.src" :alt="image.alt">
                 </div>
             </div>
@@ -182,10 +182,22 @@
         background-color: #303030;
     }
 
+    .my_sign-up-and-social-container {
+        padding: 1rem 0;
+    }
+
+    .my_follow-us-container {
+        gap: 20px;
+    }
+
     .my_follow-us {
         color: #0182f9;
         font-weight: 700;
         font-size: 2rem;
+    }
+
+    .my_socials-images {
+        gap: 12px;
     }
 
     .my_bg-logo {
@@ -196,5 +208,15 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+    }
+
+    .btn-outline-primary {
+        color: white;
+        border: 2px solid #0182f9;
+        border-radius: 0;
+
+        &:hover {
+            background-color: #0182f9;
+        }
     }
 </style>
